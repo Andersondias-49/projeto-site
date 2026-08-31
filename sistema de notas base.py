@@ -5,7 +5,10 @@ while True:
           '3 - Calcular média\n'
           '4 - Mostrar quem foi aprovado/reprovado\n'
           '5 - Sair')
-    opcao = int(input('Qual sua escolha? '))
+    try:
+        opcao = int(input('Qual sua escolha? '))
+    except ValueError:
+        print('ERRO! Por favor digite um NÚMERO de 1 a 5.')
     if opcao == 1:
         nome = str(input('Qual nome do aluno? '))
         notas = list(map(float, input('digite as 3 notas separadas por vírgula: ').split(',')))
@@ -28,4 +31,6 @@ while True:
                 print(f"{n['nome']}   REPROVADO ")
     elif opcao == 5:
         break
-
+    else:
+        print('ERRO! Por favor digite um NÚMERO de 1 a 5')
+print('Programa encerrado!')
