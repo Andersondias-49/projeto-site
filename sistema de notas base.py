@@ -1,4 +1,6 @@
 colegio = []
+reset = ('\033[m')
+verde = ('\033[32m')
 while True:
     print('1 - Cadastrar aluno\n'
           '2 - Listar alunos\n'
@@ -12,7 +14,7 @@ while True:
         colegio.append({'nome': nome,
                         'notas': notas})
     elif opcao == 2:
-        print('NOME     NOTAS')
+        print(f'{verde}NOME     NOTAS{reset}')
         for a in colegio:
             print(a['nome'],    a['notas'])
     elif opcao == 3:
